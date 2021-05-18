@@ -6,29 +6,29 @@ Note: An OpenAPI Specification document will be added soon
 
 For now here are a list of endpoints exposed on localhost:8080
 
-/employees
-Method: GET
+/employees  
+Method: GET  
 
-/employee/{employeeId}
-Method: GET
+/employee/{employeeId}  
+Method: GET  
 
-/employee/add
-Method: POST
-Request Body: JSON object
-Example: 
+/employee/add  
+Method: POST  
+Request Body: JSON object  
+Example:   
 {
     "employeeId" : "5",
     "name" : "greg",
     "annualGrossSalary" : 16000
 }
 
-/employee/{employeeId}/delete
-Method: DELETE
+/employee/{employeeId}/delete  
+Method: DELETE  
 
-/employee/update
-Method: PUT
-Request Body: JSON object
-Example:
+/employee/update  
+Method: PUT  
+Request Body: JSON object  
+Example:  
 {
     "employeeId" : "5",
     "name" : "greg",
