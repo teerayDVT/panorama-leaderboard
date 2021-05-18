@@ -5,7 +5,7 @@
       container_name: "mongo-database"
       ports:
         - 27017:27017
-    rest-api:
+    api:
       image: grad-practice
       ports:
         - 8080:8080
