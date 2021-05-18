@@ -1,8 +1,15 @@
 # Web Stream Practice
 
-Note: An OpenAPI Specification document will be added soon
+I think let's create a separate directory for each of our UIs. Thoughts?
+### Docker
+run `docker pull teeraydvt/employees:latest` to download my api image  
+cd To the directory with "docker-compose.yml"  
+run `docker compose up`
 
+Server should now be listening on localhost:8080
 ### Endpoints
+
+##### Note: An OpenAPI Specification document will be added soon
 
 For now here are a list of endpoints exposed on localhost:8080
 
@@ -34,10 +41,3 @@ Example:
     "name" : "greg",
     "annualGrossSalary" : 11000
 }
-
-### Docker
-
-cd To the directory with "docker-compose.yml"
-run `docker compose up`
-
-Server should now be listening on localhost:8080
