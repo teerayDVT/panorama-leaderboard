@@ -1,6 +1,4 @@
-import { Leaderboard } from './leaderboard.js';
-
-var teams = [
+export var teams = [
     {
         position: 1,
         teamName: "Skop n Dop",
@@ -12,26 +10,23 @@ var teams = [
         points: 66
     },
     {
-        position: 18,
-        team: "Team Red",
-        played: 17,
-        won: 5,
-        drawn: 2,
-        lost: 10,
-        goalDifference: 100,
-        points: 15
-    },
-    {
         position: 2,
-        team: "Team Blue",
+        team: "Celtic Queers",
         played: 17,
         won: 15,
         drawn: 1,
         lost: 1,
-        goalDifference: 100,
+        goalDifference: 10,
         points: 45
-    }];
-
-var leaderboard = new Leaderboard(teams[0]);
-
-console.log(leaderboard.teamName);
+    },
+    {
+        position: 18,
+        team: "Nic The Dick",
+        played: 17,
+        won: 5,
+        drawn: 2,
+        lost: 10,
+        goalDifference: -30,
+        points: 15
+    },
+    ];
