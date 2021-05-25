@@ -1,0 +1,137 @@
+img {
+    width: 50px;
+    position: relative;
+    top: 0px;
+    left: 50px;
+}
+
+#left{
+    width: 25%;
+}
+
+#likesCount {
+    color: seagreen;
+}
+
+#dislikesCount {
+    color: brown;
+}
+
+#dislikesCount, #likesCount {
+    font-weight: bolder;
+}
+
+#right{
+    width: 75%;
+}
+
+#author {
+    font-weight: bold;
+}
+
+#level, #author{
+    font-style: italic;
+}
+
+#left, #right {
+    float:left;
+}
+
+body{
+    margin: 0;
+}
+
+#One, #Two, #Three {
+    color: lightyellow;
+    background-color: darkslategray;
+    float: left;
+    padding: 0px 5px 0px 5px;
+}
+
+#right {
+    position: relative;
+    background-color: darkslategray;
+    overflow: auto;
+}
+
+#leftCol, #middleCol, #rightCol {
+    float: left;
+}
+
+#leftCol {
+    width: 30%;
+    height: 2000px;
+}
+
+#middleCol {
+   width: 40%;
+   text-align: justify;
+}
+
+#rightCol {
+    width: 30%;
+}
+
+#controls > p:first-child{
+    margin: 20px 0px 20px 0px;
+}
+
+#controls {
+    float: right;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 50%;
+    margin: 10px;
+    padding-left: 10px;
+    text-align: center;
+    border-left: 2px solid black;
+    border-bottom: 2px solid black;
+    border-top: 2px solid black;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+#viewsLabel, #viewsCount, #likeBtn, #likesCount, #dislikeBtn, #dislikesCount{
+    float:left
+}
+
+#likeBtn, #dislikeBtn {
+    clear:left;
+}
+
+#author, #date, #level {
+    float: left;
+    margin: 0px 10px 20px 0px;
+}
+
+#content {
+    clear: left;
+}
+
+#dislikeBtn {
+    float:left;
+    clear: left;
+}
+
+#likesCount, #dislikesCount {
+    margin: 0px 0px 20px 0px;
+}
+
+#likeBtn, #dislikeBtn, #viewsCount, #likesCount, #dislikesCount {
+    width: 50px;
+    /* float:left; */
+}
+
+@media screen and (max-width: 600px) {
+    #middleCol{
+        width: 80%;
+    }
+    
+    #leftCol {
+        width: 15%;
+    }
+
+    #rightCol{
+        display: none;
+    }
+}

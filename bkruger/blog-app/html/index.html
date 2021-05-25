@@ -1,0 +1,46 @@
+<!DOCTYPE>  
+<html>  
+	<head>  
+		<link rel="stylesheet" href="../css/index.css"></link>
+		<title>Blog</title>  
+	</head>  
+	<body>  
+		<div id="header">
+			<div id="left" style="background-color: darkslategray;">
+				<img src="../imgs/btc.png">
+			</div>
+			<div id="right" style="background-color: darkslategray;">
+				<div id="One">
+					<a><p>Blog</p></a>
+				</div>
+				<div id="Two">
+					<a><p>News</p></a>
+				</div>
+				<div id="Three">
+					<a><p>Invest</p></a>
+				</div>
+			</div>
+		</div>
+		<div id="leftCol">
+			<div id="controls" style="text-align: center;">
+				<p id="viewsLabel">views:</p>
+				<p id="viewsCount"></p>
+				<input id="likeBtn" type="button" value="Like" style="display:block" onclick="updateLikesCount()">
+				<p id="likesCount"></p>
+				<input id="dislikeBtn" type="button" value="Dislike" style="display:block">
+				<p id="dislikesCount"></p>
+			</div>
+		</div>
+		<div id="middleCol">
+			<h2 id="title"></h2>
+			<p id="author"></p>
+			<p id="date"></p>
+			<p id="level"></p>
+			<p id="content"></p>
+		</div>
+		<div id="rightCol">
+			<p></p>
+		</div>
+		<script src="../js/index.js"></script>
+	</body>  
+</html>  
