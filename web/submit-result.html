@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Panorama Leaderboard</title>
+        <script type="module" src="./js/submit-result.js"></script>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col"></div>
+                <div class="col-10 container">
+                    <h1>Submit Result</h1>
+                    <div class="row">
+                        <div class="col">
+                            <form>
+                                <div class="form-group">
+                                  <label for="teamName">Team 1 Name</label>
+                                  <input type="text" class="form-control" id="team-1-name" aria-describedby="teamName" placeholder="Enter team name">
+                                </div>
+                                <div class="form-group">
+                                  <label for="goalsScored">Goals</label>
+                                  <input type="number" class="form-control" id="team-1-goals-scored" placeholder="Goals">
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col">
+                            <form>
+                                <div class="form-group">
+                                  <label for="teamName">Team 2 Name</label>
+                                  <input type="text" class="form-control" id="team-2-name" aria-describedby="teamName" placeholder="Enter team name">
+                                </div>
+                                <div class="form-group">
+                                  <label for="goalsScored">Goals</label>
+                                  <input type="number" class="form-control" id="team-2-goals-scored" placeholder="Goals">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="row" id="show-winner"></div>
+                    <div class="row">
+                        <div class="col">
+                            <button type="button" class="btn btn-primary" id="submit-result">Submit Result</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col"></div>
+            </div>
+        </div>
+    </body>
+</html>

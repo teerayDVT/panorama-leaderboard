@@ -1,0 +1,29 @@
+table {
+    border: 1px solid lightslategray;
+    border-spacing: 0;
+    width: 100%;
+    text-align: center;
+}
+
+thead > tr {
+    background-color: gray;
+}
+
+tr:nth-child(even) {
+    background-color: rgba(0, 0, 0, 0.116);
+}
+
+tr > td:nth-child(2) {
+    text-align: left;
+    padding-left: 10px;
+}
+
+tr:hover {
+    background-color: green;
+}
+
+th, td {
+    border-bottom: 1px solid lightslategray;
+    margin: 15px;
+    padding: 15px;
+}
