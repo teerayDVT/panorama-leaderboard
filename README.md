@@ -25,3 +25,13 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+=======
+# Soccer leaderboard web app
+
+Please view latest changes on branch **taylor**
+
+## Environment
+I have used the npm package *http-server* to serve files  
+Run `npm install -g http-server` to install  
+Switch to the directory where **"index.html"** is located.  
+Run `http-server -c-1` to start server listening on **localhost:8080** with cache disabled
