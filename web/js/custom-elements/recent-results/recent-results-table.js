@@ -4,50 +4,72 @@ class RecentResultsTable extends HTMLElement {
     constructor() {
         super();
 
-        let shadow = this.attachShadow({mode: 'open'});
+        const shadow = this.attachShadow({mode: 'open'});
 
+        this.appendStylesheet(shadow);
+        this.appendTable(shadow);    
+    }
+
+    appendStylesheet(shadow) {
         const stylesheet = document.createElement('link');
         stylesheet.setAttribute('rel', 'stylesheet');
         stylesheet.setAttribute('href', '/js/custom-elements/recent-results/recent-results.css');
 
-        for(let resultDate of allResults.dates) {
-            console.log(resultDate);
-            // this.createTableWithHeading(resultDate);
-            const table = document.createElement('table');
-            const thead = document.createElement('thead');
-            const tr = document.createElement('tr');
-            const th = document.createElement('th');
-            th.setAttribute('colspan', 6);
-            th.innerText = resultDate.getDateString();
-
-            tr.append(th);
-            thead.append(tr);
-            table.append(thead);
-            const tbody = document.createElement('tbody');
-
-            for(let result of resultDate.results) {
-                const tr = document.createElement('tr');
-                for (let property in result) {
-                    const td = document.createElement('td');
-                    if (property === "team2Goals") {
-                        this.insertColon(tr);
-                    }
-                    td.innerText = result[property];
-                    tr.append(td);
-                    
-                }
-                tbody.append(tr);
-            }
-            table.append(tbody);
-            shadow.append(table);
-        }
-        shadow.append(stylesheet);       
+        shadow.append(stylesheet);
     }
 
-    insertColon(tr) {
+    appendTable(shadow) {
+        for(let resultDate of allResults.dates) {
+            console.log(resultDate);
+            const table = document.createElement('table');
+
+            this.appendHeader(table, resultDate);
+            this.appendBody(table, resultDate);
+
+            shadow.append(table);
+        }
+    }
+
+    appendHeader(table, resultDate) {
+        const header = document.createElement('thead');
+        const row = document.createElement('tr');
+        const heading = this.createHeading(resultDate);
+
+        row.append(heading);
+        header.append(row);
+        table.append(header);
+    }
+
+    createHeading(resultDate) {
+        const heading = document.createElement('th');
+        heading.setAttribute('colspan', 6);
+        heading.innerText = resultDate.getDateString();
+
+        return heading;
+}
+
+    appendBody(table, resultDate) {
+        const body = document.createElement('tbody');
+        for (let result of resultDate.results) {
+            const row = document.createElement('tr');
+            for (let property in result) {
+                const tableData = document.createElement('td');
+                if (property === "team2Goals") {
+                    this.insertColon(row);
+                }
+                tableData.innerText = result[property];
+                row.append(tableData);
+
+            }
+            body.append(row);
+        }
+        table.append(body);
+    }
+
+    insertColon(row) {
         const colon = document.createElement('td');
         colon.innerText = '-';
-        tr.append(colon);
+        row.append(colon);
     }
 }
 
