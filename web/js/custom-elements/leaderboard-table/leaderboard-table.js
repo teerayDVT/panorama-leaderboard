@@ -29,46 +29,55 @@ class LeaderboardTable extends HTMLElement {
             "#", "Team", "Played", "Won", "Drawn", "Lost", "GD", "Points"
         ];
 
+        this.appendStyleSheet(shadow);
+        this.appendTable(shadow);
+    }
+
+    appendStyleSheet(shadow) {
         const stylesheet = document.createElement('link');
         stylesheet.setAttribute('rel', 'stylesheet');
         stylesheet.setAttribute('href', '/js/custom-elements/leaderboard-table/leaderboard-table.css');
 
+        shadow.append(stylesheet);
+    }
+
+    appendTable(shadow) {
         const table = document.createElement('table');
-        table.setAttribute('class', 'table');
 
-        const thead = document.createElement('thead');
-        const headRow = document.createElement('tr');
+        this.appendHeader(table);
+        this.appendBody(table);
 
-        for(let i = 0; i < 8; i++) {
-            const th = document.createElement('th');
-            th.setAttribute('scope', 'col');
-            th.innerText = this.columnHeadings[i];
-            headRow.appendChild(th);
-        } 
+        shadow.append(table);
+    }
 
-        const tbody = document.createElement('tbody');
+    appendHeader(table) {
+        const header = document.createElement('thead');
+        const row = document.createElement('tr');
 
-        for(const team of teams) {
-            const bodyRow = document.createElement('tr');
-            for (const property in team) {
-                const td = document.createElement('td');
-                td.innerText = team[property];
-
-                if(property === 'teamName') {
-                    td.setAttribute('class', 'team-name');
-                }
-                
-                bodyRow.appendChild(td);
-            }
-            tbody.appendChild(bodyRow);
+        for (let i = 0; i < 8; i++) {
+            const heading = document.createElement('th');
+            heading.innerText = this.columnHeadings[i];
+            row.appendChild(heading);
         }
 
-        thead.appendChild(headRow);
-        table.appendChild(thead);
-        table.appendChild(tbody);
+        header.append(row);
+        table.append(header);
+    }
 
-        shadow.appendChild(stylesheet);
-        shadow.appendChild(table);
+    appendBody(table) {
+        const body = document.createElement('tbody');
+
+        for (const team of teams) {
+            const row = document.createElement('tr');
+            for (const property in team) {
+                const data = document.createElement('td');
+                data.innerText = team[property];
+
+                row.appendChild(data);
+            }
+            body.appendChild(row);
+        }
+        table.appendChild(body);
     }
 }
 
