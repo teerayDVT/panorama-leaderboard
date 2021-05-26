@@ -34,20 +34,21 @@ class LeaderboardTable extends HTMLElement {
         stylesheet.setAttribute('integrity', 'sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm');
         stylesheet.setAttribute('crossorigin', 'anonymous');
 
+        shadow.append(stylesheet);
+    }
+
+    appendTable(shadow) {
         const table = document.createElement('table');
-        table.setAttribute('class', 'table');
 
-        const thead = document.createElement('thead');
-        const headRow = document.createElement('tr');
+        this.appendHeader(table);
+        this.appendBody(table);
 
-        for(let i = 0; i < 8; i++) {
-            const th = document.createElement('th');
-            th.setAttribute('scope', 'col');
-            th.innerText = this.columnHeadings[i];
-            headRow.appendChild(th);
-        } 
+        shadow.append(table);
+    }
 
-        const tbody = document.createElement('tbody');
+    appendHeader(table) {
+        const header = document.createElement('thead');
+        const row = document.createElement('tr');
 
         for(const team of teams) {
             const bodyRow = document.createElement('tr');
@@ -65,11 +66,18 @@ class LeaderboardTable extends HTMLElement {
             tbody.appendChild(bodyRow);
         }
 
-        thead.appendChild(headRow);
-        table.appendChild(thead);
-        table.appendChild(tbody);
+        header.append(row);
+        table.append(header);
+    }
 
-        shadow.append(stylesheet);
+    appendBody(table) {
+        const body = document.createElement('tbody');
+
+        for (const team of teams) {
+            const row = document.createElement('tr');
+            for (const property in team) {
+                const data = document.createElement('td');
+                data.innerText = team[property];
         shadow.append(table);
     }
 }
