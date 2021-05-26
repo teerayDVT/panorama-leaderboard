@@ -53,12 +53,12 @@ class RecentResultsTable extends HTMLElement {
         for (let result of dateOfResults.results) {
             const row = document.createElement('tr');
             for (let property in result) {
-                const tableData = document.createElement('td');
+                const data = document.createElement('td');
                 if (property === "team2Goals") {
                     this.insertColon(row);
                 }
-                tableData.innerText = result[property];
-                row.append(tableData);
+                data.innerText = result[property];
+                row.append(data);
             }
             body.append(row);
         }
