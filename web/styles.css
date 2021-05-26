@@ -1,5 +1,8 @@
 body {
     background-color: midnightblue;
+    font-family: 'Roboto', Helvetica,  sans-serif;
+    letter-spacing: 0.05em;
+    color: white;
 }
 
 h1 {
@@ -7,12 +10,12 @@ h1 {
 }
 
 .container {
-    background-color: pink;
+    /* background-color: pink; */
     display: grid;
     grid-template-columns: 1fr 60% 1fr;
     grid-template-rows: auto;
     grid-template-areas:
-    "sidebar header ."
+    ". header ."
     "sidebar main ."
     "sidebar recent-results ."
     "sidebar footer .";
@@ -20,26 +23,41 @@ h1 {
 
 .header {
     grid-area: header;
-    background-color: red;
+    /* background-color: red; */
 }
 
 .main {
     grid-area: main;
-    background-color: lightblue;
+    background-color: whitesmoke;
+    padding: 20px;
+    border-radius: 5px 5px 0 0;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
-.sidebar {
+.main > h3 {
+    color: black;
+}
+
+nav {
+    border-bottom: 1px solid white;
+}
+
+ul {
     display: flex;
     justify-content: center;
     align-items: center;
     grid-area: sidebar;
-    border-right: 1px solid grey;
-    background-color: #55d6aa;
+    /* background-color: #55d6aa; */
+    color: red;
+}
+
+ul > li {
+    flex-basis: 100px;
 }
 
 .recent-results {
     grid-area: recent-results;
-    background-color: green;
+    /* background-color: green; */
 }
 
 nav > ul {
@@ -53,6 +71,6 @@ nav > ul > li {
 }
 
 nav > ul > li > a {
-    color: black;
+    color: white;
     text-decoration: none;
 }

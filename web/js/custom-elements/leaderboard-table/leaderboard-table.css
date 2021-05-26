@@ -1,17 +1,21 @@
 table {
-    border: 1px solid lightslategray;
+    border: 1px solid lightgray;
     border-spacing: 0;
     width: 100%;
     text-align: center;
+    background-color: whitesmoke;
+    color: black;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
 }
 
 thead > tr {
-    background-color: gray;
-}
-
-tr:nth-child(even) {
     background-color: rgba(0, 0, 0, 0.116);
 }
+
+/* tr:nth-child(even) {
+    background-color: rgba(0, 0, 0, 0.116);
+} */
 
 tr > td:nth-child(2) {
     text-align: left;
@@ -19,11 +23,19 @@ tr > td:nth-child(2) {
 }
 
 tr:hover {
-    background-color: green;
+    background-color: rgb(27,20,100, 0.20);
 }
 
 th, td {
-    border-bottom: 1px solid lightslategray;
+    border-bottom: 1px solid lightgray;
     margin: 15px;
     padding: 15px;
+}
+
+tr:last-child > td {
+    border: 0;
+}
+
+.team-name {
+    font-weight: bold;
 }
