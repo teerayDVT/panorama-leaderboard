@@ -19,38 +19,38 @@ class RecentResultsTable extends HTMLElement {
     }
 
     appendTable(shadow) {
-        for(let resultDate of allResults.dates) {
-            console.log(resultDate);
+        for(let dateOfResults of allResults.dates) {
+            console.log(dateOfResults);
             const table = document.createElement('table');
 
-            this.appendHeader(table, resultDate);
-            this.appendBody(table, resultDate);
+            this.appendHeader(table, dateOfResults);
+            this.appendBody(table, dateOfResults);
 
             shadow.append(table);
         }
     }
 
-    appendHeader(table, resultDate) {
+    appendHeader(table, dateOfResults) {
         const header = document.createElement('thead');
         const row = document.createElement('tr');
-        const heading = this.createHeading(resultDate);
+        const heading = this.createHeading(dateOfResults);
 
         row.append(heading);
         header.append(row);
         table.append(header);
     }
 
-    createHeading(resultDate) {
+    createHeading(dateOfResults) {
         const heading = document.createElement('th');
         heading.setAttribute('colspan', 6);
-        heading.innerText = resultDate.getDateString();
+        heading.innerText = dateOfResults.getDateString();
 
         return heading;
 }
 
-    appendBody(table, resultDate) {
+    appendBody(table, dateOfResults) {
         const body = document.createElement('tbody');
-        for (let result of resultDate.results) {
+        for (let result of dateOfResults.results) {
             const row = document.createElement('tr');
             for (let property in result) {
                 const tableData = document.createElement('td');
