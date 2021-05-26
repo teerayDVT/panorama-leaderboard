@@ -53,6 +53,11 @@ class LeaderboardTable extends HTMLElement {
             for (const property in team) {
                 const td = document.createElement('td');
                 td.innerText = team[property];
+
+                if(property === 'teamName') {
+                    td.setAttribute('class', 'team-name');
+                }
+                
                 bodyRow.appendChild(td);
             }
             tbody.appendChild(bodyRow);
