@@ -59,7 +59,6 @@ class RecentResultsTable extends HTMLElement {
                 }
                 tableData.innerText = result[property];
                 row.append(tableData);
-
             }
             body.append(row);
         }
