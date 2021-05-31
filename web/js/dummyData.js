@@ -95,8 +95,6 @@ export var results = [
     },
     ];
 
-    date: new Date(2021, 4, 19)
-
 export var result = [
     {
         time: "18:30",
