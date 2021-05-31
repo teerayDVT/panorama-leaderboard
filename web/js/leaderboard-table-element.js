@@ -30,9 +30,13 @@ class LeaderboardTable extends HTMLElement {
         ];
         const stylesheet = document.createElement('link');
         stylesheet.setAttribute('rel', 'stylesheet');
+<<<<<<< HEAD:web/js/leaderboard-table-element.js
         stylesheet.setAttribute('href', 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css');
         stylesheet.setAttribute('integrity', 'sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm');
         stylesheet.setAttribute('crossorigin', 'anonymous');
+=======
+        stylesheet.setAttribute('href', '/web/js/custom-elements/leaderboard-table/leaderboard-table.css');
+>>>>>>> 071aba6 (started implementing responsiveness with media queries. added node to project to get ready for mongodb):web/js/custom-elements/leaderboard-table/leaderboard-table.js
 
         shadow.append(stylesheet);
     }
