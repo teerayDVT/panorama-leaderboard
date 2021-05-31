@@ -9,15 +9,11 @@ table {
     margin-bottom: 20px;
 }
 
-/* thead > tr {
-    background-color: rgba(0, 0, 0, 0.116);
-} */
-
 /* tr:nth-child(even) {
     background-color: rgba(0, 0, 0, 0.116);
 } */
 
-tr:hover {
+tbody > tr:hover {
     background-color: rgb(27,20,100, 0.20);
 }
 

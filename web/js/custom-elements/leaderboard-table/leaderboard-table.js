@@ -36,7 +36,7 @@ class LeaderboardTable extends HTMLElement {
     appendStyleSheet(shadow) {
         const stylesheet = document.createElement('link');
         stylesheet.setAttribute('rel', 'stylesheet');
-        stylesheet.setAttribute('href', '/js/custom-elements/leaderboard-table/leaderboard-table.css');
+        stylesheet.setAttribute('href', '/web/js/custom-elements/leaderboard-table/leaderboard-table.css');
 
         shadow.append(stylesheet);
     }

@@ -13,7 +13,7 @@ class RecentResultsTable extends HTMLElement {
     appendStylesheet(shadow) {
         const stylesheet = document.createElement('link');
         stylesheet.setAttribute('rel', 'stylesheet');
-        stylesheet.setAttribute('href', '/js/custom-elements/recent-results/recent-results.css');
+        stylesheet.setAttribute('href', '/web/js/custom-elements/recent-results/recent-results.css');
 
         shadow.append(stylesheet);
     }
@@ -55,7 +55,7 @@ class RecentResultsTable extends HTMLElement {
             for (let property in result) {
                 const data = document.createElement('td');
                 if (property === "team2Goals") {
-                    this.insertColon(row);
+                    this.insertDash(row);
                 }
                 data.innerText = result[property];
                 row.append(data);
@@ -65,10 +65,10 @@ class RecentResultsTable extends HTMLElement {
         table.append(body);
     }
 
-    insertColon(row) {
-        const colon = document.createElement('td');
-        colon.innerText = '-';
-        row.append(colon);
+    insertDash(row) {
+        const dash = document.createElement('td');
+        dash.innerText = '-';
+        row.append(dash);
     }
 }
 

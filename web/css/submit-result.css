@@ -1,0 +1,232 @@
+body {
+    background-color: midnightblue;
+    font-family: 'Mulish', Helvetica,  sans-serif;
+    /* letter-spacing: 0.05em; */
+    color: white;
+    padding: 0;
+    margin: 0;
+    line-height: 1;
+}
+
+nav {
+    border-bottom: 1px solid white;
+}
+
+ul {
+    
+    /* background-color: #55d6aa; */
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+nav li {
+    flex-basis: 100px;
+    margin: 20px 0;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+.container {
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 1fr 4fr 1fr;
+    grid-template-rows: 10% 80% 10%;
+    grid-template-areas: 
+    ". header ."
+    ". main ."
+    ". footer .";
+}
+
+.header {
+    grid-area: header;
+    text-align: center;
+    /* background-color: red; */
+}
+
+.main {
+    grid-area: main;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex;
+    align-items: center;
+    /* padding: 20px; */
+    /* border-radius: 5px 5px 0 0; */
+    background-color: whitesmoke;
+    color: black;
+    font-size: 18px;
+}
+
+.main h1 {
+    color: midnightblue;
+}
+
+form {
+    display: grid;
+    height: 100%;
+    width: 100%;
+    grid-template-columns: 3fr 1fr 3fr;
+    grid-template-rows: 1fr 2fr 2fr 2fr 1fr;
+    grid-template-areas: 
+    "heading heading heading"
+    "top top top"
+    "left middle right"
+    "bottom bottom bottom"
+    ". . .";
+    justify-content: center;
+    /* align-items: center; */
+    /* border: 1px solid lightgray; */
+    background-color: white;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+@media screen and (max-width: 1000px) {
+    form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: red;
+        gap: 1em;
+    }
+
+    .left {
+        display: flex;
+        /* width: 100%; */
+        /* flex-direction: column; */
+        justify-content: center;
+        align-items: center;
+        background-color: blue;
+    }
+}
+
+form > * {
+    /* padding: 20px; */
+    flex-basis: 100%;
+}
+
+.heading {
+    grid-area: heading;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    border-bottom: 1px solid lightgray;
+}
+
+.top {
+    grid-area: top;
+    display: flex;
+    flex-direction: column;
+    /* background-color: green; */
+    justify-content: center;
+    align-items: center;
+}
+
+.top select-date {
+    margin-bottom: 0.7em;
+    width: 100%;
+}
+
+.top label {
+    margin-bottom: 0.5em;
+}
+
+.top select  {
+    width: 11em;
+    padding: 5px;
+    background-color: white;
+    border: 2px solid midnightblue;
+    font-family: 'Mulish', Helvetica,  sans-serif;
+
+}
+/* 
+.main .top select option  {
+    text-align: center;
+    color: red;
+    text-
+} */
+
+.left {
+    grid-area: left;
+    display: flex;
+    /* width: 100%; */
+    /* flex-direction: column; */
+    background-color: green;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.middle {
+    grid-area: middle;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* padding: 0; */
+    /* padding: 0.5em; */
+    /* font-size: 1.5em; */
+    /* background-color: lightsalmon; */
+}
+
+.right {
+    grid-area: right;
+    display: flex;
+    /* flex-direction: column; */
+    /* background-color: greenyellow; */
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.labels, .inputs {
+    display: flex;
+    flex-direction: column;
+}
+
+.labels *, .inputs * {
+    margin: 5px;
+    padding: 5px;
+}
+
+.bottom {
+    grid-area: bottom;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: red; */
+}
+
+input {
+    background-color: white;
+    border: 2px solid midnightblue;
+    border-radius: 3px;
+}
+
+.bottom button {
+    padding: 0.9em 2em;
+    font-family: 'Mulish', Helvetica,  sans-serif;
+    font-size: 0.9em;
+    font-weight: 900;
+    color: midnightblue;
+    background-color: white;
+    border: 2px solid midnightblue;
+}
+
+.bottom button:hover {
+    color: white;
+    background-color: midnightblue;
+    border-color: white;
+}
+
+.bottom button:active {
+    color: white;
+    background-color: rgba(25, 25, 112, 0.692);
+    border-color: white;
+}
