@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Panorama Leaderboard</title>
-        <script type="module" src="../js/submit-result.js"></script>
+        <script type="module" src="/web/js/create-result.js"></script>
         <script type="module" src="../js/custom-elements/select-date/select-date.js"></script>
         <link rel="stylesheet" href="../css/submit-result.css">
         <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -29,7 +31,7 @@
                     <div class="top">
                         <select-date></select-date>
                         <label for="time">Choose Time:</label>
-                        <select id="time" aria-describedby="time">
+                        <select id="time">
                             <option value="18:15">18:15</option>
                             <option value="19:00">19:00</option>
                         </select>
@@ -40,7 +42,7 @@
                             <label for="goalsScored">Goals</label>
                         </div>
                         <div class="inputs">
-                            <input type="text"  id="team-1-name" aria-describedby="teamName" placeholder="Enter team name">    
+                            <input type="text"  id="team-1-name" placeholder="Enter team name">    
                             <input type="number"  id="team-1-goals-scored" placeholder="Goals">
                         </div>
                     </div>
@@ -53,7 +55,7 @@
                             <label for="goalsScored">Goals</label>
                         </div>
                         <div class="inputs">
-                            <input type="text"  id="team-2-name" aria-describedby="teamName" placeholder="Enter team name">
+                            <input type="text"  id="team-2-name" placeholder="Enter team name">
                             <input type="number"  id="team-2-goals-scored" placeholder="Goals">
                         </div>
                     </div>

@@ -23,8 +23,8 @@ tr > td:nth-child(2) {
     font-weight: bold;
 }
 
-tr:hover {
-    background-color: rgb(27,20,100, 0.20);
+tbody tr:hover {
+    background-color: rgb(0, 0, 0, 0.04);
 }
 
 th, td {

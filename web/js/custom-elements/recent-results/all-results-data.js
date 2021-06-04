@@ -49,14 +49,16 @@ class ResultDate {
 }
 
 class Result {
-    constructor(time, team1Name, team1Goals, team2Goals, team2Name) {
+    constructor(time, team1Name, team1Goals, team2Goals, team2) {
         this.time = time;
-        this.team1Name = team1Name;
+        this.team1 = team1Name;
         this.team1Goals = team1Goals;
         this.team2Goals = team2Goals;
-        this.team2Name = team2Name;
+        this.team2Name = team2;
     }
 }
+
+
 
 let result1 = new Result("19:15", "A", 2, 2, "B");
 let result2 = new Result("20:00", "Skop n Dop", 7, 3, "Celtics");
