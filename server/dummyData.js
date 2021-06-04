@@ -1,4 +1,4 @@
-export const teams = [
+module.exports.Teams = [
     {
         position: 1,
         teamName: "Skop n Dop",
@@ -41,33 +41,34 @@ export const teams = [
     },
     ];
 
-export var result = [
-    {
-        time: "18:30",
-        team1Name: "Skop n Dop",
-        team1Goals: 10,
-        team2Goals: 2,
-        team2Name: "Sparticans"
-    },
-    {
-        time: "19:15",
-        team1Name: "A",
-        team1Goals: 2,
-        team2Goals: 2,
-        team2Name: "B"
-    },
-    {
-        time: "18:30",
-        team1Name: "Skop n Dop",
-        team1Goals: 10,
-        team2Goals: 2,
-        team2Name: "Sparticans"
-    },
-    {
-        time: "19:15",
-        team1Name: "A",
-        team1Goals: 2,
-        team2Goals: 2,
-        team2Name: "B"
-    }
-]
+// export var result = [
+//     {
+//         time: "18:30",
+//         team1Name: "Skop n Dop",
+//         team1Goals: 10,
+//         team2Goals: 2,
+//         team2Name: "Sparticans"
+//     },
+//     {
+//         time: "19:15",
+//         team1Name: "A",
+//         team1Goals: 2,
+//         team2Goals: 2,
+//         team2Name: "B"
+//     },
+//     {
+//         time: "18:30",
+//         team1Name: "Skop n Dop",
+//         team1Goals: 10,
+//         team2Goals: 2,
+//         team2Name: "Sparticans"
+//     },
+//     {
+//         time: "19:15",
+//         team1Name: "A",
+//         team1Goals: 2,
+//         team2Goals: 2,
+//         team2Name: "B"
+//     }
+// ]
+
