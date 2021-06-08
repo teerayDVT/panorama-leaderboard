@@ -49,7 +49,8 @@ class ResultDate {
 }
 
 class Result {
-    constructor(time, team1Name, team1Goals, team2Goals, team2) {
+    constructor(date, time, team1Name, team1Goals, team2Goals, team2) {
+        this.date = date;
         this.time = time;
         this.team1 = team1Name;
         this.team1Goals = team1Goals;
