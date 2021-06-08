@@ -1,4 +1,4 @@
-class LeaderboardTable extends HTMLElement {
+export default class LeaderboardTable extends HTMLElement {
     constructor() {
         super();
 
@@ -10,11 +10,45 @@ class LeaderboardTable extends HTMLElement {
     }
 
     appendStyleSheet(shadow) {
-        const stylesheet = document.createElement('link');
-        stylesheet.setAttribute('rel', 'stylesheet');
-        stylesheet.setAttribute('href', '/web/js/custom-elements/leaderboard-table/leaderboard-table.css');
+        const style = document.createElement('style');
+        style.innerHTML = `
+        table {
+            border: 1px solid lightgray;
+            border-spacing: 0;
+            width: 100%;
+            text-align: center;
+            background-color: whitesmoke;
+            color: black;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        
+        }
+        
+        thead > tr {
+            background-color: rgba(0, 0, 0, 0.116);
+        }
+        
+        tr > td:nth-child(2) {
+            text-align: left;
+            padding-left: 10px;
+            font-weight: bold;
+        }
+        
+        tbody tr:hover {
+            background-color: rgb(0, 0, 0, 0.04);
+        }
+        
+        th, td {
+            border-bottom: 1px solid lightgray;
+            margin: 15px;
+            padding: 15px;
+        }
+        
+        tr:last-child > td {
+            border: 0;
+        }
+        `;
 
-        shadow.append(stylesheet);
+        shadow.append(style);
     }
 
     appendTable(shadow, teams) {
@@ -71,14 +105,12 @@ class LeaderboardTable extends HTMLElement {
                 "Content-Type": "application/json",
                 "Accept": "application/json"
             }
-        }).then(res => {
-            return res.json();
-        }).then(data => {
-            return data;
+        }).then(response => {
+            return response.json();
+        }).then(body => {
+            return body;
         });
 
         return teams;
     }
 }
-
-customElements.define('leaderboard-table', LeaderboardTable);

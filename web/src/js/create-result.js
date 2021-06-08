@@ -11,9 +11,9 @@ function submitResult() {
 
     // const winnerOutput = document.getElementById('show-winner');
     // if (checkTeamsExist(team1, team2)) {
-    //     // const winner = checkGoals(team1, team2);
-    //     // calculatePoints(winner);
-    //     // winnerOutput.innerHTML = winner;
+        // const winner = checkGoals(team1, team2);
+        // calculatePoints(winner);
+        // winnerOutput.innerHTML = winner;
     // } else alert("One or more of these teams do not exist.");
 
 }

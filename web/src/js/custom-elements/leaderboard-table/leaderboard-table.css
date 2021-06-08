@@ -13,10 +13,6 @@ thead > tr {
     background-color: rgba(0, 0, 0, 0.116);
 }
 
-/* tr:nth-child(even) {
-    background-color: rgba(0, 0, 0, 0.116);
-} */
-
 tr > td:nth-child(2) {
     text-align: left;
     padding-left: 10px;
