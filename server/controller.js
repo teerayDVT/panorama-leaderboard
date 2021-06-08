@@ -4,6 +4,7 @@ const { getLeaderboardData } = require('./get-leaderboard');
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
+const { getResults } = require('./get-results');
 
 const app = express();
 const port = 5000;
@@ -23,11 +24,16 @@ app.post("/add-team", (req, res) => {
 })
 
 app.get("/leaderboard", (req, res) => {
-    getLeaderboardData().then(data => {
-        res.send(data);
+    getLeaderboardData().then(leaderboardData => {
+        res.send(leaderboardData);
     });
-    
-    // res.send(getLeaderboardData());
+})
+
+app.get("/results", (req, res) => {
+    getResults().then(results => {
+        console.log(results);
+        res.send(results);
+    })
 })
 
 app.listen(port, () => {
