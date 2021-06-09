@@ -1,0 +1,33 @@
+.container {
+    display: grid;
+    grid-template-columns: 30% 1fr 30%;
+    grid-template-rows: 40px auto 50px;
+    grid-template-areas:
+    "logo nav nav"
+    "leftAd main rightAd"
+    "leftAd footer footer";
+}
+
+.logo {
+    grid-area: logo;
+}
+
+.nav {
+    grid-area: nav;
+}
+
+.leftAd {
+    grid-area: leftAd;
+}
+
+.rightAd {
+    grid-area: rightAd;
+}
+
+.main {
+    grid-area: main;
+}
+
+.footer {
+    grid-area: footer;
+}
