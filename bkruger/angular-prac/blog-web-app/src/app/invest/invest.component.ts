@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder } from '@angular/forms';
+import { Investment } from '../investment';
 
 @Component({
   selector: 'app-invest',
@@ -6,10 +8,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./invest.component.css']
 })
 export class InvestComponent implements OnInit {
+  investment?: Investment;
+  investmentForm = this.formBuilder.group({
+    amountToProtect: '',
+    profitBeforeSell: '',
+    percentProfit: '',
+  });
 
-  constructor() { }
+  constructor(
+    private formBuilder: FormBuilder,
+  ) { }
 
   ngOnInit(): void {
+  }
+
+  onSubmit(): void{
+    this.investment = this.investmentForm.value;
+    console.log(this.investment);
   }
 
 }

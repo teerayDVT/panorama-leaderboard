@@ -7,6 +7,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { BlogComponent } from './blog/blog.component';
 import { InvestComponent } from './invest/invest.component';
 import { LogoComponent } from './logo/logo.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import {MatButtonModule} from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -18,7 +23,12 @@ import { LogoComponent } from './logo/logo.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    NoopAnimationsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
