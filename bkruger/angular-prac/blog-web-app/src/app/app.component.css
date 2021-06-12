@@ -3,7 +3,7 @@
     grid-template-columns: 30% 1fr 30%;
     grid-template-rows: 40px auto 50px;
     grid-template-areas:
-    "logo nav nav"
+    "logo nav profile"
     "leftAd main rightAd"
     "leftAd footer footer";
 }
@@ -14,6 +14,10 @@
 
 .nav {
     grid-area: nav;
+}
+
+.profile {
+    grid-area: profile;
 }
 
 .leftAd {

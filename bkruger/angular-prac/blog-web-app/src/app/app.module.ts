@@ -12,6 +12,9 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
+import { AuthComponent } from './auth/auth.component';
+import { ProfileComponent } from './profile/profile.component';
+import { AdminModule } from './admin/admin.module';
 
 @NgModule({
   declarations: [
@@ -20,6 +23,8 @@ import {MatButtonModule} from '@angular/material/button';
     BlogComponent,
     InvestComponent,
     LogoComponent,
+    AuthComponent,
+    ProfileComponent,
   ],
   imports: [
     BrowserModule,
@@ -29,6 +34,7 @@ import {MatButtonModule} from '@angular/material/button';
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
+    AdminModule
   ],
   providers: [],
   bootstrap: [AppComponent]
