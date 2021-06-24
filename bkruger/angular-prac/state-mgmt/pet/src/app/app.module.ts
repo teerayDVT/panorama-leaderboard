@@ -18,6 +18,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { DarkthemeEffects } from './store/effects/darktheme.effects';
 import { darkThemeFeatureKey, darkThemeReducer } from './store/reducers/darktheme.reducer';
 import { ApplicationHomeComponent } from './comps/app/application-home/application-home.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { ApplicationHomeComponent } from './comps/app/application-home/applicati
     StoreModule.forRoot({}, {}),
     EffectsModule.forRoot([]),
     StoreModule.forFeature(darkThemeFeatureKey, darkThemeReducer),
-    EffectsModule.forFeature([DarkthemeEffects])
+    EffectsModule.forFeature([DarkthemeEffects]),
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
