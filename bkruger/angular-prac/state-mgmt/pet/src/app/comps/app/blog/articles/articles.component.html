@@ -1,1 +1,5 @@
-<p>articles works!</p>
+<div [ngStyle]="{'background-color':darkTheme ? 'rgba(34,39,46,0.95)' : 'white' }">
+    <!-- rgb(113, 125, 138); -->
+    <button (click)="toggleDarkTheme()">Toggle Dark Theme</button>
+    <p>{{ darkTheme$ | async }}</p>
+</div>

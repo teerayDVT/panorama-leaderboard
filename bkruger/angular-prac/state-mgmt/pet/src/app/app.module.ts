@@ -14,6 +14,10 @@ import { AppHomeComponent } from './comps/app/application-home/application-home.
 import { InvestmentsComponent } from './comps/app/invest/investments/investments/investments.component';
 import { AdminRoutingModule } from './comps/admin/admin-routing.module';
 import { ApplicationRoutingModule } from './comps/app/application-routing.module';
+import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
+import { DarkthemeEffects } from './store/effects/darktheme.effects';
+import { darkThemeFeatureKey, darkThemeReducer } from './store/reducers/darktheme.reducer';
 
 @NgModule({
   declarations: [
@@ -33,7 +37,11 @@ import { ApplicationRoutingModule } from './comps/app/application-routing.module
     BrowserModule,
     ApplicationRoutingModule,
     AdminRoutingModule,
-    AppRoutingModule
+    AppRoutingModule,
+    StoreModule.forRoot({}, {}),
+    EffectsModule.forRoot([]),
+    StoreModule.forFeature(darkThemeFeatureKey, darkThemeReducer),
+    EffectsModule.forFeature([DarkthemeEffects])
   ],
   providers: [],
   bootstrap: [AppComponent]
