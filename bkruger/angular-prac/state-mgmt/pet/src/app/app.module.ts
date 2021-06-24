@@ -10,7 +10,6 @@ import { InvestmentComponent } from './comps/app/invest/investment/investment/in
 import { RiskTakesComponent } from './comps/app/invest/risk-takes/risk-takes/risk-takes.component';
 import { RiskTakeComponent } from './comps/app/invest/risk-take/risk-take/risk-take.component';
 import { AdminHomeComponent } from './comps/admin/admin-home/admin-home.component';
-import { AppHomeComponent } from './comps/app/application-home/application-home.component';
 import { InvestmentsComponent } from './comps/app/invest/investments/investments/investments.component';
 import { AdminRoutingModule } from './comps/admin/admin-routing.module';
 import { ApplicationRoutingModule } from './comps/app/application-routing.module';
@@ -18,6 +17,7 @@ import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { DarkthemeEffects } from './store/effects/darktheme.effects';
 import { darkThemeFeatureKey, darkThemeReducer } from './store/reducers/darktheme.reducer';
+import { ApplicationHomeComponent } from './comps/app/application-home/application-home.component';
 
 @NgModule({
   declarations: [
@@ -25,8 +25,7 @@ import { darkThemeFeatureKey, darkThemeReducer } from './store/reducers/darkthem
     PageNotFoundComponent,
     ArticlesComponent,
     ArticleComponent,
-    AppHomeComponent,
-    AppHomeComponent,
+    ApplicationHomeComponent,
     AdminHomeComponent,
     InvestmentsComponent,
     InvestmentComponent,

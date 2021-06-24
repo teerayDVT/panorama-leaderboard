@@ -1,18 +1,18 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
-import { AppHomeComponent } from './application-home/application-home.component';
 import { ArticleComponent } from './blog/article/article.component';
 import { ArticlesComponent } from './blog/articles/articles.component';
 import { InvestmentComponent } from './invest/investment/investment/investment.component';
 import { InvestmentsComponent } from './invest/investments/investments/investments.component';
 import { RiskTakeComponent } from './invest/risk-take/risk-take/risk-take.component';
 import { RiskTakesComponent } from './invest/risk-takes/risk-takes/risk-takes.component';
+import { ApplicationHomeComponent } from './application-home/application-home.component';
 
 const routes: Routes = [
   {
     path: 'app',
-    component: AppHomeComponent,
+    component: ApplicationHomeComponent,
     children: [
       {
         path: 'blog',
