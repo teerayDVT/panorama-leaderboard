@@ -1,5 +1,5 @@
 import { createReducer, on } from '@ngrx/store';
-import * as DarkthemeActions from '../actions/darktheme.actions';
+import * as DarkthemeActions from '../../actions/dark-theme/darktheme.actions'
 
 export const darkThemeFeatureKey = 'darkTheme';
 

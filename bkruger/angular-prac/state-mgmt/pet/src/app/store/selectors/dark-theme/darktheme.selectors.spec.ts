@@ -1,4 +1,4 @@
-import * as fromDarktheme from '../reducers/darktheme.reducer';
+import * as fromDarktheme from '../../reducers/dark-theme/darktheme.reducer'
 import { selectDarkThemeState } from './darktheme.selectors';
 
 describe('Darktheme Selectors', () => {

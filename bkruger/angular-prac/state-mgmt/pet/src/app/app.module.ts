@@ -15,10 +15,14 @@ import { AdminRoutingModule } from './comps/admin/admin-routing.module';
 import { ApplicationRoutingModule } from './comps/app/application-routing.module';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
-import { DarkthemeEffects } from './store/effects/darktheme.effects';
-import { darkThemeFeatureKey, darkThemeReducer } from './store/reducers/darktheme.reducer';
 import { ApplicationHomeComponent } from './comps/app/application-home/application-home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ArticleEditComponent } from './comps/admin/blog/article-edit/article-edit.component';
+import { DarkthemeEffects } from './store/effects/dark-theme/darktheme.effects';
+import { darkThemeFeatureKey, darkThemeReducer } from './store/reducers/dark-theme/darktheme.reducer';
+import { NewArticleEffects } from './store/effects/new-article/new-article.effects';
+import { newArticleFeatureKey, newArticleReducer } from './store/reducers/new-article/new-article.reducer';
+import { MyTestComponent } from './comps/admin/blog/test/my-test/my-test.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +35,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     InvestmentsComponent,
     InvestmentComponent,
     RiskTakesComponent,
-    RiskTakeComponent
+    RiskTakeComponent,
+    ArticleEditComponent,
+    MyTestComponent
   ],
   imports: [
     BrowserModule,
@@ -41,8 +47,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     StoreModule.forRoot({}, {}),
     EffectsModule.forRoot([]),
     StoreModule.forFeature(darkThemeFeatureKey, darkThemeReducer),
-    EffectsModule.forFeature([DarkthemeEffects]),
-    BrowserAnimationsModule
+    EffectsModule.forFeature([DarkthemeEffects, NewArticleEffects]),
+    BrowserAnimationsModule,
+    StoreModule.forFeature(newArticleFeatureKey, newArticleReducer)
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -4,7 +4,7 @@ import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { concatMap } from 'rxjs/operators';
 import { Observable, EMPTY } from 'rxjs';
 
-import * as DarkthemeActions from '../actions/darktheme.actions';
+import * as DarkthemeActions from '../../actions/dark-theme/darktheme.actions';
 
 
 @Injectable()
