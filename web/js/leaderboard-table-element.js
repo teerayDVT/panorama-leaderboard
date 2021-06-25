@@ -1,11 +1,11 @@
-import { teams } from './dummyData.js';
+import { teams } from "./dummyData.js";
 
 class LeaderboardTable extends HTMLElement {
-    constructor() {
-        super();
+  constructor() {
+    super();
 
-        let shadow = this.attachShadow({mode: 'open'});
-        /* CREATING ELEMENT USING HTML
+    let shadow = this.attachShadow({mode: "open"});
+    /* CREATING ELEMENT USING HTML
         shadow.innerHTML = `
             <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
             <table class="table">
@@ -20,53 +20,87 @@ class LeaderboardTable extends HTMLElement {
                         <th scope="col">GD</th>
                         <th scope="col">Points</th>
                     </tr>
-                </thead>
             </table>
         `;*/
 
-        /* CREATING ELEMENT USING JS */
-        this.columnHeadings = [
-            "#", "Team", "Played", "Won", "Drawn", "Lost", "GD", "Points"
-        ];
-        const stylesheet = document.createElement('link');
-        stylesheet.setAttribute('rel', 'stylesheet');
-        stylesheet.setAttribute('href', 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css');
-        stylesheet.setAttribute('integrity', 'sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm');
-        stylesheet.setAttribute('crossorigin', 'anonymous');
+    /* CREATING ELEMENT USING JS */
+    this.columnHeadings = [
+      "#", "Team", "Played", "Won", "Drawn", "Lost", "GD", "Points"
+    ];
+    const stylesheet = document.createElement("link");
+    stylesheet.setAttribute("rel", "stylesheet");
+    stylesheet.setAttribute("href", "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css");
+    stylesheet.setAttribute("integrity", "sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm");
+    stylesheet.setAttribute("crossorigin", "anonymous");
 
-        const table = document.createElement('table');
-        table.setAttribute('class', 'table');
+    shadow.append(stylesheet);
+  }
 
-        const thead = document.createElement('thead');
-        const headRow = document.createElement('tr');
+  appendTable(shadow, teams) {
+    const table = document.createElement("table");
 
-        for(let i = 0; i < 8; i++) {
-            const th = document.createElement('th');
-            th.setAttribute('scope', 'col');
-            th.innerText = this.columnHeadings[i];
-            headRow.appendChild(th);
-        } 
+    this.appendHeader(table);
+    this.appendBody(table, teams);
 
-        const tbody = document.createElement('tbody');
+    shadow.append(table);
+  }
 
-        for(const team of teams) {
-            const bodyRow = document.createElement('tr');
-            for (const property in team) {
-                console.log(property);
-                const td = document.createElement('td');
-                td.innerText = team[property];
-                bodyRow.appendChild(td);
-            }
-            tbody.appendChild(bodyRow);
+  appendHeader(table) {
+    const header = document.createElement("thead");
+    const row = document.createElement("tr");
+    const columnHeadings = [
+      "#", "Team", "Played", "Won", "Drawn", "Lost", "GD", "Points"
+    ];
+
+    for(const team of teams) {
+      const bodyRow = document.createElement("tr");
+      for (const property in team) {
+        console.log(property);
+        const td = document.createElement("td");
+        td.innerText = team[property];
+
+        if(property === "teamName") {
+          td.setAttribute("class", "team-name");
         }
-
-        thead.appendChild(headRow);
-        table.appendChild(thead);
-        table.appendChild(tbody);
-
-        shadow.append(stylesheet);
-        shadow.append(table);
+                
+        bodyRow.appendChild(td);
+      }
+      tbody.appendChild(bodyRow);
     }
+
+    header.append(row);
+    table.append(header);
+  }
+
+  appendBody(table, teams) {
+    const body = document.createElement("tbody");
+    console.log(teams);
+    let position = 1;
+    for (const team of teams) {
+      const row = document.createElement("tr");
+      for (const property in team) {
+        const data = document.createElement("td");
+        data.innerText = team[property];
+        shadow.append(table);
+      }
+    }
+  }
+
+  async getLeaderboardData() {
+    return fetch("http://localhost:5000/leaderboard", {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json"
+      }
+    })
+      .then(res => {
+        return res.json();
+      })
+      .then(data => {
+        return data;
+      });
+  }
 }
 
-customElements.define('leaderboard-table', LeaderboardTable);
+customElements.define("leaderboard-table", LeaderboardTable);
