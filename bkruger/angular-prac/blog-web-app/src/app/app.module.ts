@@ -14,7 +14,6 @@ import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
 import { AuthComponent } from './auth/auth.component';
 import { ProfileComponent } from './profile/profile.component';
-import { AdminModule } from './admin/admin.module';
 
 @NgModule({
   declarations: [
@@ -34,7 +33,6 @@ import { AdminModule } from './admin/admin.module';
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
-    AdminModule
   ],
   providers: [],
   bootstrap: [AppComponent]
