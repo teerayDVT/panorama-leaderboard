@@ -1,4 +1,4 @@
-import { teams } from './dummyData.js';
+import { teams } from '../../dummyData.js';
 
 class LeaderboardTable extends HTMLElement {
     constructor() {
@@ -28,11 +28,10 @@ class LeaderboardTable extends HTMLElement {
         this.columnHeadings = [
             "#", "Team", "Played", "Won", "Drawn", "Lost", "GD", "Points"
         ];
+
         const stylesheet = document.createElement('link');
         stylesheet.setAttribute('rel', 'stylesheet');
-        stylesheet.setAttribute('href', 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css');
-        stylesheet.setAttribute('integrity', 'sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm');
-        stylesheet.setAttribute('crossorigin', 'anonymous');
+        stylesheet.setAttribute('href', '/js/custom-elements/leaderboard-table/leaderboard-table.css');
 
         const table = document.createElement('table');
         table.setAttribute('class', 'table');
@@ -52,7 +51,6 @@ class LeaderboardTable extends HTMLElement {
         for(const team of teams) {
             const bodyRow = document.createElement('tr');
             for (const property in team) {
-                console.log(property);
                 const td = document.createElement('td');
                 td.innerText = team[property];
                 bodyRow.appendChild(td);
@@ -64,8 +62,8 @@ class LeaderboardTable extends HTMLElement {
         table.appendChild(thead);
         table.appendChild(tbody);
 
-        shadow.append(stylesheet);
-        shadow.append(table);
+        shadow.appendChild(stylesheet);
+        shadow.appendChild(table);
     }
 }
 

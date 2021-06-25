@@ -1,50 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>Panorama Leaderboard</title>
-        <script type="module" src="./js/dummyData.js"></script>
-<<<<<<< HEAD
-<<<<<<< HEAD
-        <script type="module" src="./js/leaderboard-table-element.js"></script>
-=======
->>>>>>> 516361e (initial commit)
-=======
-        <script type="module" src="./js/leaderboard-table-element.js"></script>
->>>>>>> cbd0c71 (added custom web component (leaderboard-table))
-        <link rel="stylesheet" href="styles.css">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    </head>
-    <body>
-        <div class="container">
-            <div class="row">
-                <div class="col"></div>
-                <div class="col-7">
-                    <h1>Wednesday Night League</h1>
-<<<<<<< HEAD
-<<<<<<< HEAD
-                    <leaderboard-table></leaderboard-table>
-=======
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">Team</th>
-                                <th scope="col">Played</th>
-                                <th scope="col">Won</th>
-                                <th scope="col">Drawn</th>
-                                <th scope="col">Lost</th>
-                                <th scope="col">GD</th>
-                                <th scope="col">Points</th>
-                            </tr>
-                        </thead>
-                    </table>
->>>>>>> 516361e (initial commit)
-=======
-                    <leaderboard-table></leaderboard-table>
->>>>>>> cbd0c71 (added custom web component (leaderboard-table))
-                </div>
-                <div class="col"></div>
+
+<head>
+    <title>Panorama Leaderboard</title>
+    <script type="module" src="./js/dummyData.js"></script>
+    <script type="module" src="./js/leaderboard-table-element.js"></script>
+    <script type="module" src="./js/leaderboard-table-element.js"></script>
+    <script type="module" src="./js/custom-elements/leaderboard-table/leaderboard-table.js"></script>
+    <script type="module" src="./js/custom-elements/recent-results-table.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col"></div>
+            <div class="col-7">
+                <h1>Wednesday Night League</h1>
+                <leaderboard-table></leaderboard-table>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Team</th>
+                            <th scope="col">Played</th>
+                            <th scope="col">Won</th>
+                            <th scope="col">Drawn</th>
+                            <th scope="col">Lost</th>
+                            <th scope="col">GD</th>
+                            <th scope="col">Points</th>
+                        </tr>
+                    </thead>
+                </table>
+                <leaderboard-table></leaderboard-table>
+            </div>
+            <div class="col"></div>
+            <div class="header">
+                <h1>Wednesday Night League</h1>
+            </div>
+            <div class="main">
+                <h3>Current Standings</h3>
+                <leaderboard-table></leaderboard-table>
+            </div>
+            <div class="sidebar">
+                <nav>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Fixtures</a></li>
+                        <li><a href="#">Results</a></li>
+                        <li><a href="#">Teams</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="recent-results">
+                <h3>Recent Results</h3>
+                <recent-results-table></recent-results-table>
             </div>
         </div>
-    </body>
+</body>
+
 </html>
