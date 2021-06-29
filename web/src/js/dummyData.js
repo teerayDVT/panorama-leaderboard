@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { Leaderboard } from "./leaderboard.js";
 
 export var teams = [
@@ -53,6 +54,9 @@ export var results = [
     team2Goals: 2,
     team2Name: "B"
   }
+=======
+export const teams = [
+>>>>>>> e7e778890bb654d6f9d4368594f0313b44a26534
     {
         position: 1,
         teamName: "Skop n Dop",

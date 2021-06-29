@@ -1,2 +1,8 @@
+<<<<<<< HEAD
 node_modules
 .vscode
+=======
+.vscode
+node_modules
+/web/dist
+>>>>>>> e7e778890bb654d6f9d4368594f0313b44a26534
