@@ -1,5 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { Result } from '../../../../models/Result';
 
 @Component({
@@ -8,7 +8,7 @@ import { Result } from '../../../../models/Result';
   styleUrls: ['./add-result-form.component.scss'],
 })
 export class AddResultFormComponent implements OnInit {
-  addResultFormGroup: FormGroup = this.formBuilder.group({
+  addResultFormGroup: UntypedFormGroup = this.formBuilder.group({
     date: '',
     time: '',
     team1: '',
@@ -19,7 +19,7 @@ export class AddResultFormComponent implements OnInit {
 
   @Output() submitted: EventEmitter<Result> = new EventEmitter<Result>();
 
-  constructor(private formBuilder: FormBuilder) {}
+  constructor(private formBuilder: UntypedFormBuilder) {}
 
   ngOnInit(): void {}
 

@@ -109,8 +109,9 @@
       }
     }
   },
-  "defaultProject": "client",
   "cli": {
-    "defaultCollection": "@ngrx/schematics"
+    "schematicCollections": [
+      "@ngrx/schematics"
+    ]
   }
 }
