@@ -1,4 +1,4 @@
-import { HttpClientModule } from "@angular/common/http";
+import { provideHttpClient, withInterceptorsFromDi } from "@angular/common/http";
 import { NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
@@ -31,19 +31,17 @@ export function debug(reducer: ActionReducer<any>): ActionReducer<any> {
     AppComponent,
     ThemeChangerComponent
   ],
+  bootstrap: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    HttpClientModule,
-    StoreModule.forRoot({}, {metaReducers: [debug]}),
+    StoreModule.forRoot({}, { metaReducers: [debug] }),
     EffectsModule.forRoot([]),
     StoreModule.forFeature(fromResults.resultsFeatureKey, fromResults.reducer),
     EffectsModule.forFeature([ResultsEffects, StandingsEffects, ThemeEffects, ThemeEffects]),
     StoreModule.forFeature(fromStandings.standingsFeatureKey, fromStandings.reducer),
-    StoreModule.forFeature(fromTheme.themeFeatureKey, fromTheme.reducer),
+    StoreModule.forFeature(fromTheme.themeFeatureKey, fromTheme.reducer)
   ],
-  providers: [],
-  bootstrap: [AppComponent],
-})
+  providers: [provideHttpClient(withInterceptorsFromDi())] })
 export class AppModule {}

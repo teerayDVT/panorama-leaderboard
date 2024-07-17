@@ -8,7 +8,7 @@ import { Team } from "../models/Team";
 })
 export class LeaderboardService {
 	public teams$ = new Subject<Team[]>();
-	private url: string = "http://localhost:5000/leaderboard";
+	private url: string = "http://localhost:5001/leaderboard";
 
 	constructor(private httpClient: HttpClient) {}
 

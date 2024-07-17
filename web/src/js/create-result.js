@@ -34,7 +34,7 @@ function createResultObject() {
 }
 
 async function postResult(result) {
-    await fetch("http://localhost:5000/submit-result", {
+    await fetch("http://localhost:5001/submit-result", {
         method: "POST",
         mode: "cors",
         headers: {

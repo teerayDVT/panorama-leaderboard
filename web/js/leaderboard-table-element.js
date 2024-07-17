@@ -87,7 +87,7 @@ class LeaderboardTable extends HTMLElement {
   }
 
   async getLeaderboardData() {
-    return fetch("http://localhost:5000/leaderboard", {
+    return fetch("http://localhost:5001/leaderboard", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",

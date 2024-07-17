@@ -8,7 +8,7 @@ import { Result } from "../models/Result";
   providedIn: "root",
 })
 export class AddResultService {
-  private url: string = "http://localhost:5000/add-result";
+  private url: string = "http://localhost:5001/add-result";
 
   constructor(private httpClient: HttpClient) {}
 

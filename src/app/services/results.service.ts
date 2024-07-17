@@ -7,7 +7,7 @@ import { Result } from "../models/Result";
   providedIn: "root",
 })
 export class ResultsService {
-  private url = "http://localhost:5000/results";
+  private url = "http://localhost:5001/results";
 
   constructor(private httpClient: HttpClient) { }
 

@@ -131,7 +131,7 @@ export default class RecentResultsTable extends HTMLElement {
     }
 
     async getResults() {
-        let results = await fetch("http://localhost:5000/results", {
+        let results = await fetch("http://localhost:5001/results", {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",

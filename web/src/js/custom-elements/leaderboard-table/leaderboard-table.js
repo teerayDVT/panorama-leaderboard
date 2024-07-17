@@ -99,7 +99,7 @@ export default class LeaderboardTable extends HTMLElement {
     }
 
     async getLeaderboardData() {
-        let teams = await fetch("http://localhost:5000/leaderboard", {
+        let teams = await fetch("http://localhost:5001/leaderboard", {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
